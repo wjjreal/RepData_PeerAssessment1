@@ -61,6 +61,25 @@ plot(ds_spi, main="Time series plot of 5-minute interval and average steps",xlab
 
 ![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 
+* Max number of steps:
+
+```r
+max(ds_spi)
+```
+
+```
+## [1] 206.1698
+```
+at 5 minute interval:
+
+```r
+names(which.max(ds_spi))
+```
+
+```
+## [1] "835"
+```
+
 ## Imputing missing values
 * Total num of rows with NA
 
@@ -85,7 +104,7 @@ ds_new_spd <- tapply(ds_new$steps,ds_new$date,sum)
 hist(ds_new_spd, main="Histogram Total steps per day",xlab="date",ylab="steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
 
 * The New dataset mean total number of steps taken per day
 
@@ -120,5 +139,5 @@ plot(ds_new_weekday_spi, main="Weekday Time series plot of 5-minute interval and
 plot(ds_new_weekend_spi, main="Weekend Time series plot of 5-minute interval and average steps",xlab="5 minutes internal",ylab="average steps",type="l",x=names(ds_new_weekend_spi))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![](PA1_template_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
 

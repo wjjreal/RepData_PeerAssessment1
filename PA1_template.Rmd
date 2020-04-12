@@ -37,6 +37,15 @@ ds_spi <- tapply(ds$steps,ds$interval,mean,na.rm=TRUE)
 plot(ds_spi, main="Time series plot of 5-minute interval and average steps",xlab="5 minutes internal",ylab="average steps across all the days",type="l",x=names(ds_spi))
 ```
 
+* Max number of steps:
+```{r}
+max(ds_spi)
+```
+at 5 minute interval:
+```{r}
+names(which.max(ds_spi))
+```
+
 ## Imputing missing values
 * Total num of rows with NA
 ```{r}
